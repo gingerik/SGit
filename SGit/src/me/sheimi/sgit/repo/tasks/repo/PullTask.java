@@ -14,6 +14,7 @@ import org.eclipse.jgit.api.errors.TransportException;
 import org.eclipse.jgit.transport.UsernamePasswordCredentialsProvider;
 
 import android.content.ContentValues;
+import android.text.TextUtils;
 
 public class PullTask extends RepoOpTask implements OnPasswordEntered {
 
@@ -68,8 +69,7 @@ public class PullTask extends RepoOpTask implements OnPasswordEntered {
                 .setTransportConfigCallback(new SgitTransportCallback());
         String username = mRepo.getUsername();
         String password = mRepo.getPassword();
-        if (username != null && password != null && !username.equals("")
-                && !password.equals("")) {
+        if (!TextUtils.isEmpty(username) && !TextUtils.isEmpty(password)) {
             UsernamePasswordCredentialsProvider auth = new UsernamePasswordCredentialsProvider(
                     username, password);
             pullCommand.setCredentialsProvider(auth);
