@@ -107,7 +107,6 @@ public class CommitsListAdapter extends SheimiArrayAdapter<RevCommit> {
 
                     @Override
                     public void postCommits(List<RevCommit> commits) {
-                        // TODO Auto-generated method stub
                         if (commits != null) {
                             // TODO why == null
                         	clear();

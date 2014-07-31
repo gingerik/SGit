@@ -105,7 +105,6 @@ public class RepoOperationDelegate {
                 relative, new AsyncTaskPostCallback() {
                     @Override
                     public void onPostExecute(Boolean isSuccess) {
-                        // TODO Auto-generated method stub
                         mActivity.getFilesFragment().reset();
                     }
                 });
