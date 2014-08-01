@@ -87,6 +87,8 @@
     <string name="dialog_prompt_for_password_title_auth_fail">Auth Fail</string>
     <string name="dialog_prompt_for_password_checkbox">Save username and password</string>
     <string name="dialog_title_you_want_to">You want to &#8230;</string>
+    <string name="dialog_error_title">Error</string>
+    <string name="dialog_error_unknown">Unknown error</string>
 
     <!-- Others -->
     <string name="pull_msg_init">Pulling … </string>

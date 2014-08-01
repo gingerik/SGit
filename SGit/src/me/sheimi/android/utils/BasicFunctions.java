@@ -5,6 +5,9 @@ import java.security.NoSuchAlgorithmException;
 import java.util.Locale;
 
 import me.sheimi.android.activities.SheimiFragmentActivity;
+import me.sheimi.sgit.R;
+
+import android.text.TextUtils;
 
 import com.nostra13.universalimageloader.core.ImageLoader;
 
@@ -62,13 +65,17 @@ public class BasicFunctions {
 
     public static void showException(Throwable t) {
         SheimiFragmentActivity activity = BasicFunctions.getActiveActivity();
-        activity.showToastMessage(t.getMessage());
+        String msg = t.getMessage();
+        if (TextUtils.isEmpty(msg)) {
+            msg = activity.getString(R.string.dialog_error_unknown);
+        }
+        activity.showMessageDialog(R.string.dialog_error_title, msg);
         t.printStackTrace();
     }
 
     public static void showException(Throwable t, int res) {
         SheimiFragmentActivity activity = BasicFunctions.getActiveActivity();
-        activity.showToastMessage(res);
+        activity.showMessageDialog(R.string.dialog_error_title, activity.getString(res));
         t.printStackTrace();
     }
 
